@@ -1,0 +1,5 @@
+SELECT d.iddet,d.idpro,p.nombrepro,COUNT(*) AS Cantidad FROM detalle d INNER JOIN producto p ON d.idpro=p.idpro WHERE p.estadopro=1 GROUP BY p.nombrepro HAVING COUNT(*)>0; 
+
+SELECT d.iddet,d.idpro,p.nombrepro,SUM(d.cantidaddet) AS Cantidad_de_Producto,COUNT(*) AS Cantidad_de_Repeticion FROM detalle d INNER JOIN producto p ON d.idpro=p.idpro WHERE p.estadopro=1 GROUP BY p.nombrepro HAVING COUNT(*)>0
+
+SELECT d.iddet,d.idpro,p.nombrepro,SUM(d.cantidaddet) AS Cantidad_de_Producto,COUNT(*) AS Cantidad_de_Repeticion FROM detalle d INNER JOIN producto p ON d.idpro=p.idpro WHERE p.estadopro=1 GROUP BY p.nombrepro HAVING COUNT(*)>0 ORDER BY Cantidad_de_Producto DESC
