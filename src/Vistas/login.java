@@ -150,7 +150,7 @@ public class login extends javax.swing.JFrame {
         });
 
         txtImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo (2).jpg"))); // NOI18N
+        txtImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo (2).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

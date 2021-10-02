@@ -84,7 +84,6 @@ public class ventas extends javax.swing.JInternalFrame {
         spncanpro.setModel(sp);
     }
     
-    
     void generarSerie(){
         txtcodventas.setEditable(false);
         
