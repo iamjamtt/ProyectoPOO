@@ -8,6 +8,7 @@ public class login extends javax.swing.JFrame {
     
     Modelo.UserDAO udao = new UserDAO();
     Entidad.User eu = new User();
+    
     public static String username, name, ape;
     public static int tipou, idu;
     
