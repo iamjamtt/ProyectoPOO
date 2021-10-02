@@ -40,12 +40,12 @@ public class login extends javax.swing.JFrame {
                 name = eu.getNombre();
                 ape = eu.getApellido();
                 tipou = eu.getTipouser();
-                JOptionPane.showMessageDialog(null, "Bienbenido al Sitema " + user + " - " + name);
+                JOptionPane.showMessageDialog(null, "Bienvenido al Sitema " + user + " - " + name);
                 Main main = new Main();
                 main.setVisible(true);
                 dispose();
             }else{
-                JOptionPane.showMessageDialog(null, "Campos de textos incorrectos");
+                JOptionPane.showMessageDialog(null, "Campos de Textos Incorrectos");
                 txtUsername.requestFocus();
             }
         }
