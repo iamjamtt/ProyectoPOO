@@ -6,12 +6,8 @@ import Modelo.ClienteDAO;
 import static Vistas.Main.mainPanel;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JInternalFrame;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JPopupMenu;
 import javax.swing.table.DefaultTableModel;
 
 public class cliente extends javax.swing.JInternalFrame {
@@ -96,20 +92,21 @@ public class cliente extends javax.swing.JInternalFrame {
         if(fila == -1){
             JOptionPane.showMessageDialog(null, "Seleccione una fila");
         }else{
-            idcliente = Integer.parseInt(tabla.getValueAt(fila, 0).toString());
-            dni = tabla.getValueAt(fila, 1).toString();
-            nom = tabla.getValueAt(fila, 2).toString();
-            String ape = tabla.getValueAt(fila, 3).toString();
-            String tel = tabla.getValueAt(fila, 4).toString();
-            String dir = tabla.getValueAt(fila, 5).toString();
+            idcliente = Integer.parseInt(tabla.getValueAt(fila, 0).toString()); // 4
+            dni = tabla.getValueAt(fila, 1).toString(); // 12345678
+            nom = tabla.getValueAt(fila, 2).toString(); // Juanito
+            String ape = tabla.getValueAt(fila, 3).toString(); // Tello Panduro
+            String tel = tabla.getValueAt(fila, 4).toString(); // 123456789
+            String dir = tabla.getValueAt(fila, 5).toString(); // Jr. YArina #123
 
             System.out.println("" + idcliente + " " + dni + " " + nom);
-            int p;
-            p = cdao.consultar(idcliente);
             
-            if(p==idcliente){
+            int p;
+            p = cdao.consultar(idcliente); // 0
+            
+            if(p==idcliente){ // al no cumplir esto
                 JOptionPane.showMessageDialog(null, "Cliente ya cuenta con el servicio de Cta");
-            }else{
+            }else{ // entra aquí
                 cta c = new cta();
                 centrarV(c);
             }

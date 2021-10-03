@@ -16,6 +16,7 @@ public class ClienteDAO implements CRUD{
     Conexion.conexion con = new conexion();
     Connection acceso;
     
+    //consulta que saber si el id del cliente ya existe
     public int consultar(int id){
         String sql = "SELECT * FROM nrocta WHERE estadocta=1 AND idcli="+id;
         int p = 0;

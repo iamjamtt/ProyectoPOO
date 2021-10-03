@@ -1,11 +1,9 @@
 package Vistas;
 
-import Entidad.TipoUser;
 import Entidad.User;
 import Modelo.UserDAO;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.util.Locale;
 import javax.swing.JInternalFrame;
 
 public class Main extends javax.swing.JFrame {

@@ -28,22 +28,22 @@ public class cta extends javax.swing.JInternalFrame {
     }
     
     void generarSerie(){
-        String serie = cdao.NroCta();
+        String serie = cdao.NroCta(); // CTA003
         int j;
         if(serie == null){
             txtcodigo.setText("CTA001");
         }else{
-            char r2=serie.charAt(3);
-            char r3=serie.charAt(4);
-            char r4=serie.charAt(5);
+            char r2 = serie.charAt(3);
+            char r3 = serie.charAt(4);
+            char r4 = serie.charAt(5);
             String r="";
             r=""+r2+r3+r4;
             
             j=Integer.parseInt(r);
             genCod gen= new genCod();
             gen.generar(j);
-            serie = "CTA"+gen.serie();  
-            txtcodigo.setText(serie);
+            serie = "CTA"+gen.serie(); // 004  
+            txtcodigo.setText(serie); // CTA004
         }
     }
     

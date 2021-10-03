@@ -393,7 +393,7 @@ public class ventas extends javax.swing.JInternalFrame {
         documento.open();
                 
         try {
-            Image logo = Image.getInstance("src/img/logo (2).jpg");
+            Image logo = Image.getInstance("src/img/logo (2).png");
         
             Font negrita = new Font(Font.FontFamily.HELVETICA,12,Font.BOLD,BaseColor.WHITE);
             Font negrita3 = new Font(Font.FontFamily.HELVETICA,12,Font.BOLD,BaseColor.BLACK);
@@ -539,9 +539,9 @@ public class ventas extends javax.swing.JInternalFrame {
             documento.add(finall);
             
         } catch (BadElementException ex) {
-            
+            System.out.println("" + ex);
         } catch (IOException ex) {
-            
+            System.out.println("" + ex);
         }
         documento.close();
         

@@ -20,7 +20,7 @@ public class UserDAO implements CRUD{
     public Entidad.User ValidarUser(String username, String pass){
         Entidad.User eu = new User();
         
-        String sql = "SELECT * FROM user WHERE username=? and password=? and estadou=1";
+        String sql = "SELECT * FROM user WHERE username=? AND password=? AND estadou=1";
         
         try {
             acceso = con.conectar();
@@ -39,7 +39,7 @@ public class UserDAO implements CRUD{
                 eu.setTipouser(rs.getInt(8));
             }
         } catch (Exception e) {
-            System.out.println("error al validad user " + e);
+            System.out.println("error al validad user del login:  " + e);
         }
         
         return eu;
