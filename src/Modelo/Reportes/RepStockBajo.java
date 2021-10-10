@@ -10,6 +10,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -130,7 +132,7 @@ public class RepStockBajo {
             
             sheet.setZoom(150);
             
-            FileOutputStream fileOut = new FileOutputStream("RepStockBajo.xlsx");
+            FileOutputStream fileOut = new FileOutputStream("RepStockBajo"+" "+generarFcha()+".xlsx");
             book.write(fileOut);
             fileOut.close();
             JOptionPane.showMessageDialog(null, "Reporte Stock Bajo Generado");
@@ -140,5 +142,20 @@ public class RepStockBajo {
         } catch (IOException | SQLException ex) {
              Logger.getLogger(RepInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    String generarFcha(){
+        Calendar cal = new GregorianCalendar();
+        String fecha = "";
+        if((cal.get(Calendar.MONTH)+1)<10){
+            fecha = cal.get(Calendar.YEAR) + "-0" + (cal.get(Calendar.MONTH)+1) + "-" + cal.get(Calendar.DAY_OF_MONTH);
+        }else if(cal.get(Calendar.DAY_OF_MONTH)<10){
+            fecha = cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH)+1) + "-0" + cal.get(Calendar.DAY_OF_MONTH);
+        }else if((cal.get(Calendar.MONTH)+1)<10 && cal.get(Calendar.DAY_OF_MONTH)<10){
+            fecha = cal.get(Calendar.YEAR) + "-0" + (cal.get(Calendar.MONTH)+1) + "-0" + cal.get(Calendar.DAY_OF_MONTH);
+        }else{
+            fecha = cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH)+1) + "-" + cal.get(Calendar.DAY_OF_MONTH);
+        }
+        
+        return fecha;
     }
 }
